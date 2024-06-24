@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book Title</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ccffcc; /* Light green background */
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-image: url('https://www.transparenttextures.com/patterns/black-twill.png'); /* Pattern for title */
+            background-size: cover;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family: 'Merriweather', serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            margin: 20px;
+            gap: 20px;
+        }
+        .main {
+            flex: 3;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .sidebar img {
+            width: 80%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .book-cover {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .book-cover img {
+            width: 400px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+        .biography, .feedback-section, .book-launch, .rsvp-section {
+            width: 95%;
+            margin-bottom: 40px;
+            padding: 60px;
+            background-color: #fff;
+            border-radius: 50px;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+        }
+        iframe {
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .page-container {
+            margin-top: 20px;
+            width: 400px; /* Adjusted width */
+            height: 300px; /* Adjusted height */
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+        }
+        .book {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            transform-origin: left;
+            animation: rotateBook 60s infinite linear; /* Slower animation */
+        }
+        @keyframes rotateBook {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+        .page {
+            width: 100%;
+            height: 100%;
+            background: white;
+            position: absolute;
+            backface-visibility: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .page:nth-child(odd) {
+            transform-origin: left;
+        }
+        .page:nth-child(even) {
+            transform: rotateY(180deg);
+            transform-origin: right;
+        }
+        .nav-buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .nav-buttons button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Merriweather', serif;
+        }
+        .nav-buttons button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .two-column {
+            column-count: 2;
+            column-gap: 20px;
+        }
+        .link-section {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .info-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Time Went By 'Like That </h1>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <img src="https://i.pinimg.com/236x/03/a5/d6/03a5d61115a10b0bbfff338c394be9b1.jpg" alt="Image 1">
+            <img src="https://i.pinimg.com/564x/9e/6c/6b/9e6c6bd63215c8987e100137229a438e.jpg" alt="Image 2">
+            <img src="https://i.pinimg.com/236x/80/1b/2f/801b2f495fd70bc09aa67ebfe67d8eb4.jpg" alt="Image 3">
+            <img src="https://i.pinimg.com/236x/c2/e9/01/c2e90138963534f2e43d357436e8569b.jpg" alt="Image 4">
+        </div>
+        <div class="main">
+            <div class="book-cover">
+                <img src="unnamed.png" alt="Book Cover">
+            </div>
+            <div class="info-sections">
+                <div class="book-launch">
+                    <h2 class="section-title">Book Launching</h2>
+                    <p>Date: July 10, 2024</p>
+                    <p>Location: Online Event</p>
+                    <p><a href="https://example.com/book-launch" target="_blank">More Info</a></p>
+                </div>
+                <div class="rsvp-section">
+                    <h2 class="section-title">RSVP</h2>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeCZHYp5e-S7FuPeOfTw_27-Rw7SO-qZZUpXOcRqYhQteGVyg/viewform?embedded=true" height="500"></iframe>
+                </div>
+            </div>
+            <div class="biography">
+                <h2 class="section-title">Author Biography</h2>
+                <p>Abel Gebreyesus is a Data Coach for the Excellence through Quality Improvement Project (E-QIP) since the project’s first phase in October 2016. He worked with many mental health and community-based organizations in coaching and facilitating their data needs related to the project. Additionally, he is also Data Management Coordinator (DMC) at TAIBU Community Health Centre since 2009; and was also involved from 2009 – 2011 at LAMP Community Health Centre; and from 2011-2013 in Flemingdon Health Centre – both in a DMC position.</p>
+                <p>Other than in CHC sector, Abel was also involved in Family Health Team (FHT) sector; and worked for four Peel Region FHTs as Quality Improvement Decision Support Specialist (QIDSS) in 2013-2016.</p>
+                <p>Abel also involved at different capacities, such as Project Manager for small to medium size quality improvement projects and Senior Data Analyst for Local Health Integration Networks (LHINs). He also worked at the Ontario HIV Treatment Network (OHTN) as a Business Analyst. For many years, Abel contributed in different teams involving data, quality improvement, reporting, and business Intelligence (BI) areas.</p>
+                <p>Abel holds a Masters of Health Informatics (MHI) from Dalhousie University; and he is Certified Lean Six Sigma Green Belt (CLSSGB) professional.</p>
+            </div>
+            <div class="feedback-section">
+                <h2 class="section-title">Feedback</h2>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfihpZfF8eVGDZeEufDAL9ZXGS6KPjIvPfvjJuzd_-xJBCUdA/viewform?embedded=true" height="500"></iframe>
+            </div>
+            <div class="page-container">
+                <div class="book" id="book">
+                    <div class="page front">
+                        <h2>Chapter 1: A New Beginning</h2>
+                        <p class="two-column">In the quiet village of Willow Creek, life was simple and predictable...</p>
+                    </div>
+                    <div class="page back">
+                        <h2>Chapter 1: A New Beginning</h2>
+                        <p class="two-column">The villagers gathered at the town square to celebrate the harvest...</p>
+                    </div>
+                    <div class="page front">
+                        <h2>Chapter 1: A New Beginning</h2>
+                        <p class="two-column">Young Elara looked out over the hills, dreaming of adventures...</p>
+                    </div>
+                    <div class="page back">
+                        <h2>Chapter 1: A New Beginning</h2>
+                        <p class="two-column">As the sun set, a mysterious figure appeared at the edge of the village...</p>
+                    </div>
+                    <div class="page front">
+                        <h2>Chapter 1: A New Beginning</h2>
+                        <p class="two-column">Elara knew this was the start of something extraordinary...</p>
+                    </div>
+                    <div class="page back">
+                        <h2>Chapter 1: A New Beginning</h2>
+                        <p class="two-column">The figure approached, bringing news of distant lands and forgotten lore...</p>
+                    </div>
+                    <div class="page front">
+                        <h2>Chapter 1: A New Beginning</h2>
+                        <p class="two-column">With a heart full of hope, Elara decided to embark on a journey...</p>
+                    </div>
+                    <div class="page back">
+                        <h2>Chapter 1: A New Beginning</h2>
+                        <p class="two-column">Leaving Willow Creek behind, she set out into the unknown...</p>
+                    </div>
+                    <div class="page front">
+                        <h2>Chapter 1: A New Beginning</h2>
+                        <p class="two-column">Her journey took her through dark forests and over towering mountains...</p>
+                    </div>
+                    <div class="page back">
+                        <h2>Chapter 1: A New Beginning</h2>
+                        <p class="two-column">She met strange creatures and made new friends along the way...</p>
+                    </div>
+                    <div class="page front">
+                        <h2>Chapter 1: A New Beginning</h2>
+                        <p class="two-column">Elara's courage and determination grew with each passing day...</p>
+                    </div>
+                    <div class="page back">
+                        <h2>Chapter 1: A New Beginning</h2>
+                        <p class="two-column">The journey was long and arduous, but she never lost hope...</p>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button onclick="previousPage()">Previous</button>
+                    <button onclick="nextPage()">Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCL3dGdmVEJP8mF7Enc7orx61HnFbTw849b81-IS5MBx04gdNVBl-HFjCMwHpmWvl3Vcc&usqp=CAU" alt="Image 5">
+            <img src="https://i.pinimg.com/236x/4c/70/9b/4c709bb93a8475c3b010f8adf0c54aca.jpg" alt="Image 6">
+            <img src="https://i.pinimg.com/236x/fe/5a/3d/fe5a3dbd875184146c2f957d6e67c6b7.jpg" alt="Image 7">
+            <img src="https://i.pinimg.com/236x/ba/5c/81/ba5c8117ff4df9d195988904c41a5469.jpg" alt="Image 8">
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 My Book Title. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentPage = 1;
+        const pages = document.querySelectorAll('.book .page');
+
+        function nextPage() {
+            if (currentPage < pages.length) {
+                pages[currentPage - 1].style.transform = `rotateY(-180deg)`;
+                currentPage++;
+            }
+        }
+
+        function previousPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                pages[currentPage - 1].style.transform = `rotateY(0deg)`;
+            }
+        }
+    </script>
+</body>
+</html>
